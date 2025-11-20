@@ -1,21 +1,18 @@
 package com.polytech.tp;
 
+/**
+ * Décorateur Concret (Pattern Decorator).
+ * Ajoute la caractéristique "En ligne" à la description du cours.
+ */
 public class CoursEnLigne extends CoursDecorator {
-    CoursEnLigne(ICours cours) {
-        //TODO: Implémenter le reste ...
+
+    public CoursEnLigne(ICours coursDecore) {
+        super(coursDecore);
     }
 
     @Override
     public String getDescription() {
-        // TODO Auto-generated method stub
-        
-        return null;
+        // On récupère la description de base et on y ajoute notre spécificité
+        return super.getDescription() + " (En ligne)";
     }
-
-    @Override
-    public double getDuree() {
-        // TODO Auto-generated method stub
-        
-        return 0;
-    };
 }

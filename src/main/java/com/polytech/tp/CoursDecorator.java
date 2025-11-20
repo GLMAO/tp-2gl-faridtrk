@@ -1,11 +1,19 @@
 package com.polytech.tp;
 
+/**
+ * Classe abstraite Decorator (Pattern Decorator).
+ * Elle implémente ICours et contient une référence à l'objet ICours décoré.
+ */
 public abstract class CoursDecorator implements ICours {
-    protected ICours coursDecorated;
+    protected ICours coursDecore;
 
-    public CoursDecorator(ICours cours) {
-        this.coursDecorated = cours;
+    public CoursDecorator(ICours coursDecore) {
+        this.coursDecore = coursDecore;
     }
-    
-    // TODO: Forcer l'implémentation des méthodes de ICours
+
+    // Délègue la méthode de base au composant décoré
+    @Override
+    public String getDescription() {
+        return coursDecore.getDescription();
+    }
 }
